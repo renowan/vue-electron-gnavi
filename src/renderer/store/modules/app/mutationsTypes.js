@@ -1,0 +1,30 @@
+// app loading
+export const APP_UPDATE_IS_APP_LOADING = 'APP_UPDATE_IS_APP_LOADING'
+// page loading
+export const APP_UPDATE_IS_PAGE_LOADING = 'APP_UPDATE_IS_PAGE_LOADING'
+// block loading
+export const APP_UPDATE_IS_BLOCK_LOADING = 'APP_UPDATE_IS_BLOCK_LOADING'
+
+
+// app 基本必要な情報をロード
+export const APP_LOAD_REQUEST = 'APP_LOAD_REQUEST'
+export const APP_LOAD_SUCCESS = 'APP_LOAD_SUCCESS'
+
+export const APP_SEARCH_REQUEST = 'APP_SEARCH_REQUEST'
+export const APP_SEARCH_SUCCESS = 'APP_SEARCH_SUCCESS'
+
+// エラー
+export const APP_COMMON_ERROR = 'APP_COMMON_ERROR'
+
+// 検索情報更新
+export const APP_UPDATE_SEARCH_OPT = 'APP_UPDATE_SEARCH_OPT'
+
+// ページネーション処理用、現在のページ番号更新
+export const APP_UPDATE_CURRENT_PAGE = 'APP_UPDATE_CURRENT_PAGE'
+
+// 検索結果の表示モード
+export const APP_UPDATE_LIST_MODE = 'APP_UPDATE_LIST_MODE'
+
+export const APP_UPDATE_DETAIL_INDEX = 'APP_UPDATE_DETAIL_INDEX'
+
+export const APP_UPDATE_KEYWORD = 'APP_UPDATE_KEYWORD'

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>vue-electron-pack</title>
+    <% if (htmlWebpackPlugin.options.nodeModules) { %>
+      <!-- Add `node_modules/` to global paths so `require` works properly in development -->
+      <script>
+        require('module').globalPaths.push('<%= htmlWebpackPlugin.options.nodeModules.replace(/\\/g, '\\\\') %>')
+      </script>
+      <script>
+        (function() {
+          if (window.process != undefined) {
+            const {remote} = require('electron')
+            const {Menu, MenuItem} = remote;
+            const menu = new Menu()
+            let rightClickPosition = null
+            menu.append(new MenuItem({
+              label: '検証',
+              click: () => {
+                remote.getCurrentWindow().inspectElement(rightClickPosition.x, rightClickPosition.y)
+              }
+            }))
+
+            window.addEventListener('contextmenu', (e) => {
+              e.preventDefault()
+              rightClickPosition = {x: e.x, y: e.y}
+              menu.popup(remote.getCurrentWindow())
+            }, false)
+          }
+        }());
+      </script>
+    <% } %>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- Set `__static` path to static files in production -->
+    <script>
+      if (process.env.NODE_ENV !== 'development') window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
+    </script>
+
+    <!-- webpack builds are automatically injected -->
+  </body>
+</html>
