@@ -12,6 +12,10 @@ export default {
     // stateに保存
     state.registrValue = registrValue
     localStorage.setItem('idList', JSON.stringify(idList))
+
+    if (registrValue === 0) {
+      state.shopDataList = []
+    }
   },
   [types.SEARCH_SUCCESS] (state, data) {
     // let obj = {}

@@ -123,7 +123,9 @@ export default {
     deleteBookMark (data) {
       // console.log(data)
       this.$store.dispatch('bmk/delete', data.id)
-      this.$store.dispatch('bmk/loadShopData')
+      if (this.bmk.registrValue > 0) {
+        this.$store.dispatch('bmk/loadShopData')
+      }
     },
     goDetail (data) {
       this.$store.dispatch('bmk/onChangeDetailIndex', data.id)

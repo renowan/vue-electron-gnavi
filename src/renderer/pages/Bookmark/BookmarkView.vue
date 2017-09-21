@@ -49,13 +49,11 @@ export default {
     }
   },
   created () {
-    // const {shopDataList, registrValue} = this
-    // if (registrValue > 0 && shopDataList.length < 1) {
-    //   this.$store.dispatch('bmk/loadShopData')
-    // }
-    // detailIndex
-    this.$store.commit('bmk/UPDATE_CURRENT_PAGE', 1)
-    this.$store.dispatch('bmk/loadShopData')
+    const {shopDataList, registrValue} = this
+    if (registrValue > 0) {
+      this.$store.commit('bmk/UPDATE_CURRENT_PAGE', 1)
+      this.$store.dispatch('bmk/loadShopData')
+    }
   },
   methods: {
     test1 () {
