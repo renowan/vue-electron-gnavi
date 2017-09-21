@@ -19,7 +19,7 @@ npm run build
 
 #### API Key入力
 key取得：[ぐるなび API](http://api.gnavi.co.jp/api/)  
-取得したkeyをここに入力
+取得したkeyをここに入力  
 /vue-electron-gnavi/src/renderer/store/constants.js  
 Line 9  
 `export const KEY_ID = 'Your API Key'`
